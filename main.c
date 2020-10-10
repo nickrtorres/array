@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	}
 
 	if (0 == strcmp(argv[1], "test")) {
-		assert(ARRAY_NULLPTR == array_insert(0, 42));
+		assert(ARRAY_NULLPTR == array_insert(NULL, 42));
 
 		struct array array = array_init();
 		assert(ARRAY_OK == array_insert(&array, 42));
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 		assert(256 == *ptr);
 		assert(ARRAY_OK == array_get(&array, 2, &ptr));
 		assert(1000 == *ptr);
-		assert(ARRAY_OUT_OF_BOUNDS == array_get(&array, UINT32_MAX, 0));
+		assert(ARRAY_OUT_OF_BOUNDS == array_get(&array, UINT32_MAX, NULL));
 
 		uint32_t *back = 0;
 		assert(ARRAY_OK == array_pop(&array, &back));
