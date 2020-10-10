@@ -1,6 +1,6 @@
 .POSIX:
 
-CFLAGS = -O3
+CFLAGS = -std=c99 -O3
 
 main: main.o array.o
 

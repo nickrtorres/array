@@ -9,7 +9,6 @@ typedef void (*array_mapfn) (uint32_t *);
 
 enum array_result {
 	ARRAY_OK,
-
 	ARRAY_EMTPY,
 	ARRAY_EOM,
 	ARRAY_NULLPTR,
