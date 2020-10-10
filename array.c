@@ -33,12 +33,12 @@ array_with_capacity(struct array *array, size_t cap)
 	array->m_len      = 0;
 	array->m_capacity = cap;
 
-    /*
-     * NB: This will leak if someone passes an array that contains allocated
-     * data. If feels out of place to free the passed in array's m_data, so we
-     * have to use the honor system here -- I can't think of a better way that
-     * doesn't overly complicate the rest of this constructor.
-     */
+	/*
+	 * NB: This will leak if someone passes an array that contains allocated
+ 	 * data. If feels out of place to free the passed in array's m_data, so we
+ 	 * have to use the honor system here -- I can't think of a better way that
+ 	 * doesn't overly complicate the rest of this constructor.
+ 	 */
 	array->m_data     = data;
 	return ARRAY_OK;
 }
