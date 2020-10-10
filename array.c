@@ -39,7 +39,7 @@ array_with_capacity(struct array *array, size_t cap)
  	 * have to use the honor system here -- I can't think of a better way that
  	 * doesn't overly complicate the rest of this constructor.
  	 */
-	array->m_data     = data;
+	array->m_data = data;
 	return ARRAY_OK;
 }
 
@@ -68,8 +68,8 @@ array_resize(struct array *array)
 
 	uint32_t *new_data;
 	uint32_t *old_data = array->m_data;
-	size_t old_cap  = array->m_capacity;
-	size_t new_cap  = 0 == old_cap ? 1 : old_cap * ARRAY_RESIZE_FACTOR;
+	size_t old_cap = array->m_capacity;
+	size_t new_cap = 0 == old_cap ? 1 : old_cap * ARRAY_RESIZE_FACTOR;
 
 	new_data = malloc(sizeof(uint32_t) * new_cap);
 	if (NULL == new_data) {
