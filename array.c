@@ -95,7 +95,7 @@ array_insert(struct array *array, uint32_t value)
 		return ARRAY_NULLPTR;
 	}
 
-	if (array->m_len >= array->m_capacity) {
+	if (array->m_len == array->m_capacity) {
 		enum array_result rv = array_resize(array);
 		if (ARRAY_OK != rv) {
 			return rv;	
