@@ -33,7 +33,8 @@ int main(int argc, char **argv)
 		assert(array_contains(&array, 500));
 		assert(!array_contains(&array, 300));
 
-		array_map(&array, &double_value);
+		assert(ARRAY_NULLPTR == array_map(&array, NULL));
+		assert(ARRAY_OK == array_map(&array, &double_value));
 		assert(array_contains(&array, 84));
 		assert(array_contains(&array, 256));
 		assert(array_contains(&array, 1000));

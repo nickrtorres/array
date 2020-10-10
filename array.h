@@ -33,8 +33,8 @@ enum array_result array_pop(struct array *array, uint32_t **back);
 
 bool array_contains(struct array *array, uint32_t needle);
 enum array_result array_get(struct array *array, size_t idx, uint32_t **ptr);
-uint32_t *array_get_unchecked(struct array *array, size_t idx);
+uint32_t *array_get_unchecked(struct array *array, size_t idx);;
 
-void array_map(struct array *array, array_mapfn fn);
+enum array_result array_map(struct array *array, array_mapfn fn);
 
 #endif /* ARRAY_H_ */

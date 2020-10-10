@@ -157,16 +157,17 @@ array_get_unchecked(struct array *array, size_t idx)
 	return array->m_data + idx;
 }
 
-void
+enum array_result
 array_map(struct array *array, array_mapfn fn)
 {
 	if (NULL == fn) {
-		/* TOOD: error? */
-		return;
+		return ARRAY_NULLPTR;
 	}
 
 	for (size_t i = 0; i < array->m_len; ++i) {
 		fn((array->m_data + i));
 	}
+
+    return ARRAY_OK;
 }
 
